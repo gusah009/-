@@ -1,0 +1,51 @@
+﻿<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  // 여기에 코드를 넣으세요.
+  // import axios from 'axios';
+  url = "https://www.zerocho.com";
+  urlGet = url + "/api/get";
+  axios.get(urlGet) // 내부에 new Promise가 들어가있습니다.
+    .then((result) => { // result는 서버에서 받아온 데이터입니다.
+      console.log(result);
+      console.log(result.data); // {}
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    // 위 코드는 아래와 같이 만들 수 있습니다.
+    (async() => {
+      try {
+        const result = await axios.get(urlGet);
+        console.log(result)
+        console.log(result.data)
+      } catch (error) {
+        console.log(error)
+      }
+    })();
+
+  // ========== 아래는 Post 방식입니다 ===========
+  urlPost = url + "/api/post/json"
+  (async() => {
+    try {
+      const result = await axios.post(urlPost, {
+        name: 'HyeonMo',
+        birth: 1998,
+      });
+      console.log(result)
+      console.log(result.data)
+    } catch (error) {
+      console.log(error)
+    }
+  })();
+
+  // //========== 아래는 formData에 관한 내용입니다 ==========
+  // urlPost = "" + "/post/json"
+  // (async() => {
+  //   try {
+  //     const fromData = new FormData();
+  //     formData.append('name', 'HyeonMo')
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // })();
+</script>

@@ -1,0 +1,18 @@
+﻿<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const formData = new FormData();
+  url = "https://www.zerocho.com";
+  urlPost = url + "/api/post/formdata";
+
+  (async () => {
+    try {
+      formData.append('name', 'HyeonMo');
+      formData.append('birth', '1998');
+      const result = await axios.post(urlPost, formData);
+      console.log(result);
+      console.log(result.data);
+    } catch (error) {
+      console.error(error);
+    }
+  })();
+</script>
