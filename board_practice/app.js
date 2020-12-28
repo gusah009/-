@@ -7,6 +7,7 @@ const connect = require('./schemas');
 const indexRouter = require('./routes');
 const documentsRouter = require('./routes/documents');
 const boardRouter = require('./routes/board');
+const registRouter = require('./routes/regist');
 
 const app = express();
 app.set('port', process.env.PORT || 3000);
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/documents', documentsRouter);
 app.use('/board', boardRouter);
+app.use('/regist', registRouter);
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);

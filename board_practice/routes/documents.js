@@ -9,6 +9,7 @@ router.route('/')
       const document = await Document.create({
         title: req.body.title,
         user: req.body.user,
+        content: req.body.content,
       });
       console.log(document);
       res.status(201).json(document);

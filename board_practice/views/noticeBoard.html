@@ -9,17 +9,6 @@
     </style>
   </head>
   <body>
-    <div>
-      <form id="board-form">
-        <fieldset>
-          <legend>게시글 등록</legend>
-          <div><input id="title" type="text" placeholder="제목"></div>
-          <div><input id="user" type="text" placeholder="사용자"></div>
-          <button type="submit">등록</button>
-        </fieldset>
-      </form>
-    </div>
-    <br>
     <br>
     <table id="board-list">
       <thead>
@@ -41,6 +30,8 @@
       {% endfor %}
       </tbody>
     </table>
+    <br>
+    <button type="button" onclick="location.href='regist' ">등록</button>
     <br>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/main.js"></script>
